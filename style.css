@@ -1,0 +1,148 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap");
+
+:root {
+  --primary-color: #22254b;
+  --secondary-color: #373b69;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Poppins, "sans-serif";
+  background-color: var(--primary-color);
+}
+
+nav {
+  padding: 1rem 2rem;
+  display: flex;
+  background-color: var(--secondary-color);
+  justify-content: flex-end;
+  align-items: center;
+}
+
+form button {
+  display: none;
+}
+
+nav input {
+  padding: 1rem 1.5rem;
+  background-color: transparent;
+  border: 2px solid var(--primary-color);
+  border-radius: 2.5rem;
+  color: #fff;
+  font-size: 1rem;
+  width: 200px;
+  outline: none;
+}
+
+nav input::placeholder {
+  color: #6c73c7;
+}
+
+nav input:focus {
+  background-color: var(--primary-color);
+}
+
+.container {
+  margin: 1rem;
+  display: grid;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 1.5rem;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: 1250px) {
+  .container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 950px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 650px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+  .movie {
+    justify-self: center;
+  }
+}
+
+.movie {
+  width: 300px;
+  height: 100%;
+  background-color: var(--secondary-color);
+  border-radius: 10px;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.movie img {
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.info {
+  padding: 0.5rem 1rem;
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.info .title {
+  font-size: 1.25rem;
+}
+
+.info .rating {
+  padding: 0.25rem;
+  background-color: var(--primary-color);
+  border-radius: 5px;
+  font-weight: 600;
+}
+.overview {
+  display: block;
+  position: absolute;
+  padding: 1rem;
+  bottom: 0;
+  transform: translateY(100%);
+  background-color: #fff;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  color: #000;
+  transition: transform 0.2s linear 0.1s;
+}
+
+.movie:hover .overview {
+  transform: translateY(0);
+  transition: transform 0.2s linear 0.1s;
+}
+
+.overview h3 {
+  margin-bottom: 1rem;
+}
+.overview p {
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+.good {
+  color: rgb(5, 212, 5);
+}
+
+.average {
+  color: orange;
+}
+
+.bad {
+  color: red;
+}
